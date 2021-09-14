@@ -1,0 +1,18 @@
+.hyperlink {
+    font: inherit;
+    &, &:visited {
+        color: var(--AccentTextFillColorPrimary);
+    }
+
+    &:hover {
+        color: var(--AccentTextFillColorSecondary);
+        text-decoration: none;
+    }
+    &:active {
+        color: var(--AccentTextFillColorTertiary);
+        text-decoration: none;
+    }
+    &[disabled] {
+        color: var(--AccentTextFillColorDisabled);
+    }
+}

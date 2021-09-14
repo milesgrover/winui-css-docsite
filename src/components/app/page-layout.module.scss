@@ -1,0 +1,6 @@
+.page_layout {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: 1fr;
+    flex: 1;
+}

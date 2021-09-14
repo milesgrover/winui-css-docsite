@@ -1,0 +1,55 @@
+/* reference implementation of button */
+.button {
+    border-radius: var(--borderRadiusSmall);
+    background-color: var(--ControlFillColorDefault);
+    border: 1px solid;
+    border-color: var(--ControlElevationBorder);
+    font: var(--fontBody);
+    padding: 0 11px 2px;
+    height: 32px;
+    color: var(--TextFillColorPrimary);
+    min-width: var(--controlMinWidth);
+  
+  &:hover {
+    background-color: var(--ControlFillColorSecondary);
+  }
+  
+  &:active {
+    background-color: var(--ControlFillColorTertiary);
+    border-color: var(--ControlStrokeColorDefault);
+    color: var(--TextFillColorSecondary);
+  }
+}
+
+/* reference implementation of primary button overrides for button */
+.button_primary {
+  background-color: var(--AccentFillColorDefault);
+  color: var(--TextOnAccentFillColorPrimary);
+  border-color: var(--AccentControlElevationBorder);
+  
+  &:hover {
+    background-color: var(--AccentFillColorSecondary);
+  }
+ 
+  &:active {
+    background-color: var(--AccentFillColorTertiary);
+    color: var(--TextOnAccentFillColorSecondary);
+    border-color: var(--ControlStrokeColorOnAccentDefault);
+  }
+}
+
+.button_disabled {
+  &,
+  &:hover,
+  &:active {
+    background-color: var(--ControlFillColorDisabled);
+    border-color: var(--ControlStrokeColorDefault);
+    color: var(--TextFillColorDisabled);
+  }
+
+  &.button_primary {
+    background-color: var(--AccentFillColorDisabled);
+    border-color: transparent;
+    color: var(--TextOnAccentFillColorDisabled);
+  }
+}

@@ -1,0 +1,21 @@
+.side_nav {
+    width: 269px;
+    background-color: var(--ControlAltFillColorTertiary);
+    border: 1px solid var(--ControlStrokeColorDefault);
+    border-left: 0;
+    border-bottom: 0;
+    text-align: left;
+
+    ul {
+        margin: 0;
+        padding: 6px 0;
+        list-style: none;
+
+        li {
+            padding: 6px 12px;
+            &.active {
+                background-color: var(--ControlAltFillColorTertiary);
+            }
+        }
+    }
+}

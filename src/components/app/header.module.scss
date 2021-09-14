@@ -1,0 +1,13 @@
+.header {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    text-align: left;
+    padding: 24px;
+}
+
+.header_heading {
+    font: var(--fontTitle);
+    color: var(--TextFillColorPrimary);
+    margin: 0;
+    cursor: pointer;
+}

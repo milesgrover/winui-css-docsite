@@ -1,0 +1,22 @@
+.tab_panes_tab {
+    display: inline-block;
+    border-radius: var(--borderRadiusSmall) var(--borderRadiusSmall) 0 0;
+    border: 1px solid;
+    border-color: var(--SystemFillColorSolidNeutral);
+    background-color: var(--ControlAltFillColorQuarternary);
+    padding: 6px 12px;
+    position: relative;
+    top: 0.5px;
+    cursor: pointer;
+
+    &[class~=active] {
+        background-color: var(--SolidBackgroundFillColorTertiary);
+        border-bottom-color: var(--SolidBackgroundFillColorTertiary);
+    }
+}
+
+.tab_panes_pane {
+    border: 1px solid var(--SystemFillColorSolidNeutral);
+    padding: 6px 12px;
+    border-radius: 0 var(--borderRadiusSmall) var(--borderRadiusSmall) var(--borderRadiusSmall);
+}

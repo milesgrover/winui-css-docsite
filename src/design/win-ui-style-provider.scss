@@ -1,0 +1,64 @@
+@import "values";
+
+@mixin win-ui-metrics {
+    --borderRadiusSmall: #{$borderRadiusSmall};
+    --borderRadiusLarge: #{$borderRadiusLarge};
+    --borderRadiusCircle: #{$borderRadiusCircle};
+    --controlMinWidth: #{$controlMinWidth};
+}
+
+@mixin win-ui-type-ramp {
+    --fontWeightNormal: #{$fontWeightNormal};
+    --fontWeightSemibold: #{$fontWeightSemibold};
+    --fontFamily: #{$fontFamily};
+    --fontCaption: #{$fontCaption};
+    --fontBody: #{$fontBody};
+    --fontBodyStrong: #{$fontBodyStrong};
+    --fontBodyLarge: #{$fontBodyLarge};
+    --fontSubtitle: #{$fontSubtitle};
+    --fontTitle: #{$fontTitle};
+    --fontTitleLarge: #{$fontTitleLarge};
+    --fontDisplay: #{$fontDisplay};
+}
+
+@mixin win-ui-default-accent-color {
+    --accentBase: #{$accentBase};
+    --accentLight1: #{$accentLight1};
+    --accentLight2: #{$accentLight2};
+    --accentLight3: #{$accentLight3};
+    --accentLight2-90: #{$accentLight2-90};
+    --accentLight2-80: #{$accentLight2-80};
+    --accentDark1: #{$accentDark1};
+    --accentDark2: #{$accentDark2};
+    --accentDark3: #{$accentDark3};
+    --accentDark1-90: #{$accentDark1-90};
+    --accentDark1-80: #{$accentDark1-80};
+}
+
+@mixin win-ui-colors-light {
+    @each $name, $value in $lightValues {
+        --#{$name}: #{$value};
+    }
+}
+
+@mixin win-ui-colors-dark {
+    @each $name, $value in $darkValues {
+        --#{$name}: #{$value};
+    }
+}
+
+// apply this to your root
+.win-ui-style-provider {
+    @include win-ui-metrics;
+    @include win-ui-type-ramp;
+    @include win-ui-default-accent-color;
+
+    // default is light theme
+    @include win-ui-colors-light;
+    color: var(--TextFillColorPrimary);
+
+    &.theme-dark,
+    .theme-dark & {
+        @include win-ui-colors-dark;
+    }
+}

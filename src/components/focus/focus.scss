@@ -1,0 +1,20 @@
+// Positioning of focus pseudo-element is done via percentages and transform in order to behave consistently across display scale factors.
+.focus-visible *:focus,
+.focus-visible:focus,
+*:focus-visible {
+    outline: 0;
+    position: relative;
+    &::before {
+        content: "";
+        border-radius: calc(var(--borderRadiusSmall) + 1px); // larger element needs a larger border-radius to look correct
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: calc(100% + 4px);
+        width: calc(100% + 4px);
+        box-sizing: border-box;
+        border: 1px solid var(--FocusStrokeColorInner);
+        box-shadow: 0 0 0 2px var(--FocusStrokeColorOuter);
+    }
+}
