@@ -1,0 +1,54 @@
+.text_box {
+    display: inline-block;
+    background-color: var(--ControlFillColorSecondary);
+    border: 1px solid;
+    border-color: var(--ControlStrokeColorDefault);
+    border-radius: var(--borderRadiusSmall);
+    min-width: 158px;
+    height: 32px;
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: -1px;
+        bottom: -1px;
+        border-radius: var(--borderRadiusSmall);
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        background: linear-gradient(to top, var(--ControlStrongStrokeColorDefault) 20%, var(--SubtleFillColorTransparent) 20% 100%);
+        height: var(--borderRadiusSmall);
+        width: calc(100% + 2px);
+    }
+
+    input {
+        border: 0;
+        height: 30px;
+        background-color: transparent;
+        font: var(--fontBody);
+        padding: 0 12px;
+        color: var(--TextFillColorPrimary);
+
+        &::placeholder {
+            color: var(--TextFillColorSecondary);
+        }
+    }
+
+    &.focused {
+        &:after {
+            background: linear-gradient(to top, var(--AccentFillColorTertiary) 40%, var(--SubtleFillColorTransparent) 40% 100%);
+        }
+    }
+
+    &.disabled {
+        input {
+            color: var(--TextFillColorDisabled);
+            &::placeholder {
+                color: var(--TextFillColorDisabled);
+            }
+        }
+        &:after {
+            display: none;
+        }
+    }
+}

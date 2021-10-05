@@ -1,0 +1,119 @@
+.progress_bar {
+    width: 213px;
+    height: 3px;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        border-radius: var(--borderRadiusCircle);
+        background-color: var(--ControlStrongStrokeColorDefault);
+        height: 1px;
+        width: 100%;
+        top: 1px;
+    }
+    .fill,
+    .fill2 {
+        display: block;
+        border-radius: var(--borderRadiusCircle);
+        height: 3px;
+        background-color: var(--AccentFillColorDefault);
+        position: absolute;
+        transition: width 167ms cubic-bezier(0, 0, 0, 1);
+    }
+
+    &.indeterminate {
+        overflow: hidden;
+        .fill,
+        .fill2 {
+            position: absolute;
+        }
+        .fill {
+            width: 40%;
+            transform: translateX(-100%);
+            animation: indeterminate-1 2250ms cubic-bezier(0.4, 0.0, 0.6, 1.0) infinite;
+        }
+        .fill2 {
+            width: 60%;
+            transform: translateX(-150%);
+            animation: indeterminate-2 2250ms cubic-bezier(0.4, 0.0, 0.6, 1.0) infinite;
+        }
+    }
+}
+
+.progress_ring {
+    &.ring_size_16 {
+        width: 16px;
+        height: 16px;
+
+        .stroke_circle {
+            stroke-width: 1px;
+        }
+    }
+
+    &.ring_size_32 {
+        width: 32px;
+        height: 32px;
+
+        .stroke_circle {
+            stroke-width: 1px;
+        }
+    }
+
+    &.ring_size_64 {
+        width: 64px;
+        height: 64px;
+
+        .stroke_circle {
+            stroke-width: 2px;
+        }
+    }
+
+    .stroke_circle {
+        stroke: var(--AccentFillColorDefault);
+        fill: none;
+        stroke-linecap: round;
+        transform-origin: 50% 50%;
+        transform: rotate(-90deg);
+        transition: all 0.2s ease-in-out;
+        animation: spin-infinite 2s linear infinite;
+      }
+}
+
+@keyframes spin-infinite {
+    0% {
+      stroke-dasharray: 0.01px 43.97px;
+      transform: rotate(0deg);
+    }
+    50% {
+      stroke-dasharray: 21.99px 21.99px;
+      transform: rotate(450deg);
+    }
+    100% {
+      stroke-dasharray: 0.01px 43.97px;
+      transform: rotate(1080deg);
+    }
+  }
+
+  @keyframes indeterminate-1 {
+      0% {
+        transform: translateX(-100%);
+      }
+      66.67% {
+        transform: translateX(300%);
+      }
+      100% {
+        transform: translateX(300%);
+      }
+  }
+
+  @keyframes indeterminate-2 {
+      0% {
+        transform: translateX(-150%);
+      }
+      33.33% {
+        transform: translateX(-150%);
+      }
+      100% {
+        transform: translateX(166%);
+      }
+  }

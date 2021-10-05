@@ -47,6 +47,18 @@
     }
 }
 
+@mixin win-ui-elevation-light {
+    @each $name, $value in $elevationLight {
+        --elevation#{$name}: #{$value};
+    }
+}
+
+@mixin win-ui-elevation-dark {
+    @each $name, $value in $elevationDark {
+        --elevation#{$name}: #{$value};
+    }
+}
+
 // apply this to your root
 .win-ui-style-provider {
     @include win-ui-metrics;
@@ -55,10 +67,12 @@
 
     // default is light theme
     @include win-ui-colors-light;
+    @include win-ui-elevation-light;
     color: var(--TextFillColorPrimary);
-
+    
     &.theme-dark,
     .theme-dark & {
         @include win-ui-colors-dark;
+        @include win-ui-elevation-dark;
     }
 }

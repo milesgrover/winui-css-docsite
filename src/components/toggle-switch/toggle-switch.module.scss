@@ -1,0 +1,149 @@
+.toggle_switch {
+    .switch {
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+
+    }
+
+    .switch_track {
+        border-radius: var(--borderRadiusCircle);
+        background-color: var(--ControlAltFillColorSecondary);
+        border: 1px solid var(--ControlStrongStrokeColorDefault);
+        width: 40px;
+        height: 20px;
+        box-sizing: border-box;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+
+        &:focus-visible {
+            &:before {
+                border-radius: var(--borderRadiusCircle);
+            }
+        }
+        
+        .switch_thumb {
+            background-color: var(--TextFillColorSecondary);
+            border-radius: var(--borderRadiusCircle);
+            width: 12px;
+            height: 12px;
+            margin: 3px;
+            position: relative;
+            transition: transform 187ms cubic-bezier(0,0,0,1);
+            &:before {
+                content: "";
+                position: absolute;
+                box-sizing: border-box;
+                border-radius: inherit;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: calc(100% + 2px);
+                width: calc(100% + 2px);
+                border: 1px solid;
+                border-color: var(--CircleElevationBorder);
+                opacity: 0;
+            }
+        }
+        
+        &:hover {
+            background-color: var(--ControlAltFillColorTertiary);
+            .switch_thumb {
+                transform: scale(calc(14/12));
+            }
+        }
+        &:active {
+            background-color: var(--ControlAltFillColorQuarternary);
+            .switch_thumb {
+                width: calc(17 / (14/12) * 1px);
+            }
+        }
+    }
+    &.switch_on {
+        .switch_track {
+            background-color: var(--AccentFillColorDefault);
+            border-color: transparent;
+            
+            .switch_thumb {
+                transform: translate(20px);
+                background-color: var(--TextOnAccentFillColorPrimary);
+                &:before {
+                    opacity: 1;
+                }
+            }
+            &:hover {
+                background-color: var(--AccentFillColorSecondary);
+                .switch_thumb {
+                    transform: translate(20px) scale(calc(14/12));
+                }
+            }
+            &:active {
+                background-color: var(--AccentFillColorTertiary);
+                .switch_thumb {
+                    transition: none;
+                    transform: translate(17px) scale(calc(14/12));
+                }
+            }
+        }
+    }
+    .header {
+        display: block;
+        font: var(--fontBody);
+        margin-bottom: 7px;
+    }
+    .on_off {
+        display: inline-block;
+        font: var(--fontBody);
+        margin-right: 12px;
+        margin-bottom: 3px;
+        color: var(--TextFillColorPrimary)
+    }
+
+    .switch_track + .on_off {
+        margin-right: 0;
+        margin-left: 12px;
+    }
+
+    &.disabled {
+        .switch_track {
+            border-color: var(--ControlStrongStrokeColorDisabled);
+            background-color: var(--ControlAltFillColorDisabled);
+            .switch_thumb {
+                background-color: var(--TextFillColorDisabled);
+            }
+            &:hover {
+                .switch_thumb {
+                    transform: none;
+                }
+            }
+            &:active {
+                .switch_thumb {
+                    width: 12px;
+                }
+            }
+        }
+        &.switch_on {
+            .switch_track {
+                border-color: transparent;
+                background-color: var(--AccentFillColorDisabled);
+                .switch_thumb {
+                    background-color: var(--TextOnAccentFillColorPrimary);
+                    &:before {
+                        opacity: 0;
+                    }
+                }
+                &:hover {
+                    .switch_thumb {
+                        transform: translate(20px);
+                    }
+                }
+            }
+        }
+        .on_off {
+            color: var(--TextFillColorDisabled)
+        }
+    }
+}

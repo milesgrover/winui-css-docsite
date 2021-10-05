@@ -1,0 +1,124 @@
+.radio_button {
+    $controlSize: 18px;
+    position: relative;
+    display: inline-flex;
+    height: 32px;
+
+    .radio_button_visual {
+        width: $controlSize;
+        height: $controlSize;
+        border-radius: var(--borderRadiusCircle);
+        top: 0;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        border: 1px solid;
+        border-color: var(--ControlStrongStrokeColorDefault);
+        background-color: var(--ControlAltFillColorSecondary);
+        z-index: 1;
+
+        &::before {
+            content: "";
+            background-color: var(--TextOnAccentFillColorPrimary);
+            width: 6px;
+            height: 6px;
+            border-radius: var(--borderRadiusCircle);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 167ms cubic-bezier(0, 0, 0, 1);
+            z-index: 3;
+        }
+
+        &::after {
+            content: "";
+            background: linear-gradient(to bottom, var(--ControlStrokeColorDefault) 0% 50%, var(--ControlStrokeColorSecondary) 95%);
+            width: 12px;
+            height: 12px;
+            border-radius: var(--borderRadiusCircle);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 167ms cubic-bezier(0, 0, 0, 1);
+            z-index: 2;
+        }
+        
+    }
+    
+    input[type=radio] {
+        margin: 0;
+        width: $controlSize;
+        height: $controlSize;
+        opacity: 0;
+
+        &:hover ~ .radio_button_visual {
+            background-color: var(--ControlAltFillColorTertiary);
+        }
+
+        &:active ~ .radio_button_visual {
+            background-color: var(--ControlAltFillColorQuarternary);
+            border-color: var(--ControlStrongStrokeColorDisabled);
+            &::before {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        &:checked ~ .radio_button_visual {
+            background-color: var(--AccentFillColorDefault);
+            border-color: transparent;
+
+            &::before {
+                background-color: var(--TextOnAccentFillColorPrimary);
+                transform: translate(-50%, -50%) scale(calc(10/6));
+            }
+
+            &::after {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        &:checked:hover ~ .radio_button_visual {
+            background-color: var(--AccentFillColorSecondary);
+
+            &::before {
+                transform: translate(-50%, -50%) scale(calc(12/6));
+
+            }
+
+            &::after {
+                transform: translate(-50%, -50%) scale(calc(14/12));
+            }
+        }
+        &:checked:active ~ .radio_button_visual {
+            background-color: var(--AccentFillColorTertiary);
+            
+            &::before {
+                transform: translate(-50%, -50%);
+            }
+
+            &::after {
+                transform: translate(-50%, -50%) scale(calc(8/12));
+            }
+        }
+
+        &:disabled ~ .radio_button_visual {
+            background-color: var(--ControlAltFillColorDisabled);
+            border-color: var(--ControlStrongStrokeColorDisabled);
+            &::before {
+                transform: translate(-50%, -50%) scale(0);
+            }
+        }
+        &:disabled ~ .radio_button_text {
+            color: var(--TextFillColorDisabled);
+        }
+    }
+}
+
+.radio_button_text {
+    font: var(--fontBody);
+    padding-left: 8px;
+    position: relative;
+    top: -1px;
+}

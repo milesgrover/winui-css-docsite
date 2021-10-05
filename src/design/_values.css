@@ -118,24 +118,24 @@
     --LayerOnAcrylicFillColorDefault: rgba(255, 255, 255, 0.25);
     --LayerOnAccentAcrylicFillColorDefault: rgba(255, 255, 255, 0.25);
     
-    --SolidBackgroundFillColorBase: rgba(243, 243, 243, 1);
-    --SolidBackgroundFillColorSecondary: rgba(238, 238, 238, 1);
-    --SolidBackgroundFillColorTertiary: rgba(249, 249, 249, 1);
-    --SolidBackgroundFillColorQuarternary: rgba(255, 255, 255, 1);
+    --SolidBackgroundFillColorBase: #F3F3F3;
+    --SolidBackgroundFillColorSecondary: #EEEEEE;
+    --SolidBackgroundFillColorTertiary: #F9F9F9;
+    --SolidBackgroundFillColorQuarternary: #FFFFFF;
     --SolidBackgroundFillColorTransparent: rgba(243, 243, 243, 0);
     
-    --SystemFillColorSuccess: rgba(15, 123, 15, 1);
-    --SystemFillColorCaution: rgba(157, 93, 0, 1);
-    --SystemFillColorCritical: rgba(196, 43, 28, 1);
+    --SystemFillColorSuccess: #0F7B0F;
+    --SystemFillColorCaution: #9D5D00;
+    --SystemFillColorCritical: #C42B1C;
     --SystemFillColorNeutral: rgba(0, 0, 0, 0.4458);
-    --SystemFillColorSolidNeutral: rgba(138, 138, 138, 1);
+    --SystemFillColorSolidNeutral: #8A8A8A;
     --SystemFillColorAttentionBackground: rgba(246, 246, 246, 0.5);
-    --SystemFillColorSuccessBackground: rgba(223, 246, 221, 1);
-    --SystemFillColorCautionBackground: rgba(255, 244, 206, 1);
-    --SystemFillColorCriticalBackground: rgba(253, 231, 233, 1);
+    --SystemFillColorSuccessBackground: #DFF6DD;
+    --SystemFillColorCautionBackground: #FFF4CE;
+    --SystemFillColorCriticalBackground: #FDE7E9;
     --SystemFillColorNeutralBackground: rgba(0, 0, 0, 0.0241);
-    --SystemFillColorSolidAttentionBackground: rgba(247, 247, 247, 1);
-    --SystemFillColorSolidNeutralBackground: rgba(243, 243, 243, 1);
+    --SystemFillColorSolidAttentionBackground: #F7F7F7;
+    --SystemFillColorSolidNeutralBackground: #F3F3F3;
 }
 
 .style-provider.theme-dark,
@@ -230,22 +230,22 @@
     --LayerOnAcrylicFillColorDefault: rgba(255, 255, 255, 0.0359);
     --LayerOnAccentAcrylicFillColorDefault: rgba(255, 255, 255, 0.0359);
     
-    --SolidBackgroundFillColorBase: rgba(32, 32, 32, 1);
-    --SolidBackgroundFillColorSecondary: rgba(28, 28, 28, 1);
-    --SolidBackgroundFillColorTertiary: rgba(40, 40, 40, 1);
-    --SolidBackgroundFillColorQuarternary: rgba(44, 44, 44, 1);
+    --SolidBackgroundFillColorBase: #202020;
+    --SolidBackgroundFillColorSecondary: #1C1C1C;
+    --SolidBackgroundFillColorTertiary: #282828;
+    --SolidBackgroundFillColorQuarternary: #2C2C2C;
     --SolidBackgroundFillColorTransparent: rgba(32, 32, 32, 0);
     
-    --SystemFillColorSuccess: rgba(108, 203, 95, 1);
-    --SystemFillColorCaution: rgba(252, 225, 0, 1);
-    --SystemFillColorCritical: rgba(255, 153, 164, 1);
+    --SystemFillColorSuccess: #6CCB5F;
+    --SystemFillColorCaution: #FCE100;
+    --SystemFillColorCritical: #FF99A4;
     --SystemFillColorNeutral: rgba(255, 255, 255, 0.5442);
-    --SystemFillColorSolidNeutral: rgba(157, 157, 157, 1);
+    --SystemFillColorSolidNeutral: #9D9D9D;
     --SystemFillColorAttentionBackground: rgba(255, 255, 255, 0.0326);
-    --SystemFillColorSuccessBackground: rgba(57, 61, 27, 1);
-    --SystemFillColorCautionBackground: rgba(67, 53, 25, 1);
-    --SystemFillColorCriticalBackground: rgba(68, 39, 38, 1);
+    --SystemFillColorSuccessBackground: #393D1B;
+    --SystemFillColorCautionBackground: #433519;
+    --SystemFillColorCriticalBackground: #442726;
     --SystemFillColorNeutralBackground: rgba(255, 255, 255, 0.0326);
-    --SystemFillColorSolidAttentionBackground: rgba(46, 46, 46, 1);
-    --SystemFillColorSolidNeutralBackground: rgba(46, 46, 46, 1);
+    --SystemFillColorSolidAttentionBackground: #2E2E2E;
+    --SystemFillColorSolidNeutralBackground: #2E2E2E;
 }

@@ -16,6 +16,7 @@
 }
 
 .tab_panes_pane {
+    background-color: var(--SolidBackgroundFillColorTertiary);
     border: 1px solid var(--SystemFillColorSolidNeutral);
     padding: 6px 12px;
     border-radius: 0 var(--borderRadiusSmall) var(--borderRadiusSmall) var(--borderRadiusSmall);

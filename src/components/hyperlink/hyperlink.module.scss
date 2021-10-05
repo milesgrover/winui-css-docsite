@@ -4,15 +4,17 @@
         color: var(--AccentTextFillColorPrimary);
     }
 
-    &:hover {
+    &:hover:not([disabled]) {
         color: var(--AccentTextFillColorSecondary);
         text-decoration: none;
     }
-    &:active {
+    &:active:not([disabled]) {
         color: var(--AccentTextFillColorTertiary);
         text-decoration: none;
     }
+    // hyperlink doesn't technically support a disabled state, so we can't use :disabled
     &[disabled] {
         color: var(--AccentTextFillColorDisabled);
+        cursor: default;
     }
 }

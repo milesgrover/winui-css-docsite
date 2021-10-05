@@ -1,0 +1,113 @@
+.checkbox {
+    display: inline-flex;
+    position: relative;
+
+    .checkbox_visual {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border: 1px solid;
+        border-color: var(--ControlStrongStrokeColorDefault);
+        background-color: var(--ControlAltFillColorSecondary);
+        border-radius: var(--borderRadiusSmall);
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .check {
+            position: relative;
+            top: 1px;
+            left: 1px;
+            width: 13px;
+            height: 10px;
+            fill: none;
+            stroke: currentColor;;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dashoffset: -1px;
+            stroke-dasharray: 0.01px 30px;
+        }
+
+        .indeterminate {
+            width: 8px;
+            height: 2px;
+            fill: currentColor;
+        }
+    }
+    
+    input[type=checkbox] {
+        opacity: 0;
+        margin: 0;
+        width: 20px;
+        height: 20px;
+        
+        &:hover ~ .checkbox_visual {
+            background-color: var(--ControlAltFillColorTertiary);
+        }
+        
+        &:active ~ .checkbox_visual {
+            background-color: var(--ControlAltFillColorQuarternary);
+            border-color: var(--ControlStrongStrokeColorDisabled);
+        }
+
+        &:disabled ~ .checkbox_visual {
+            background-color: var(--ControlAltFillColorDisabled);
+            border-color: var(--ControlStrongStrokeColorDisabled);
+        }
+        
+        &:checked ~ .checkbox_visual {
+            color: var(--TextOnAccentFillColorPrimary);
+            background-color: var(--AccentFillColorDefault);
+            border-color: var(--AccentFillColorDefault);
+
+            .check {
+                animation: check-grow 333ms 88ms cubic-bezier(0,0,0,1) forwards;
+            }
+        }
+        
+        &:checked:hover ~ .checkbox_visual {
+            background-color: var(--AccentFillColorSecondary);
+            border-color: var(--AccentFillColorSecondary);
+        }
+        
+        &:checked:active ~ .checkbox_visual {
+            color: var(--TextOnAccentFillColorSecondary);
+            background-color: var(--AccentFillColorTertiary);
+            border-color: var(--AccentFillColorTertiary);
+        }
+
+        &:indeterminate ~ .checkbox_visual {
+            color: var(--TextOnAccentFillColorPrimary);
+            background-color: var(--AccentFillColorDefault);
+            border-color: var(--AccentFillColorDefault);
+        }
+
+        &:checked:disabled ~ .checkbox_visual,
+        &:indeterminate:disabled ~ .checkbox_visual {
+            color: var(--TextOnAccentFillColorDisabled);
+            background-color: var(--AccentFillColorDisabled);
+            border-color: transparent;
+        }
+    }
+
+    .checkbox_text {
+        font: var(--fontBody);
+        padding-left: 8px;
+        position: relative;
+        top: -1px;
+    }
+}
+
+@keyframes check-grow {
+    0% {
+      stroke-dasharray: 0.01px 30px;
+    }
+    100% {
+      stroke-dasharray: 11.4px 30px;
+    }
+  }

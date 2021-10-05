@@ -1,0 +1,16 @@
+.hyperlink_button {
+    border: 0;
+    background-color: var(--SubtleFillColorTransparent);
+    color: var(--AccentTextFillColorPrimary);
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--SubtleFillColorSecondary);
+    }
+    &:active {
+        background-color: var(--SubtleFillColorTertiary);
+    }
+    &:disabled {
+        background-color: var(--SubtleFillColorDisabled);
+    }
+}
