@@ -17,26 +17,16 @@
         color: transparent;
         display: flex;
         align-items: center;
-        justify-content: center;
 
-        .check {
+        &::after {
+            font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
             position: relative;
-            top: 1px;
-            left: 1px;
-            width: 13px;
-            height: 10px;
-            fill: none;
-            stroke: currentColor;;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-dashoffset: -1px;
-            stroke-dasharray: 0.01px 30px;
-        }
-
-        .indeterminate {
-            width: 8px;
-            height: 2px;
-            fill: currentColor;
+            left: 3px;
+            content: "\e73e";
+            font-size: 12px;
+            width: 0;
+            overflow: hidden;
+            transition: width 333ms 88ms cubic-bezier(0,0,0,1);
         }
     }
     
@@ -65,8 +55,8 @@
             background-color: var(--AccentFillColorDefault);
             border-color: var(--AccentFillColorDefault);
 
-            .check {
-                animation: check-grow 333ms 88ms cubic-bezier(0,0,0,1) forwards;
+            &::after {
+                width: 12px;
             }
         }
         
@@ -85,6 +75,11 @@
             color: var(--TextOnAccentFillColorPrimary);
             background-color: var(--AccentFillColorDefault);
             border-color: var(--AccentFillColorDefault);
+
+            &::after {
+                content: "\e73c";
+                width: 12px;
+            }
         }
 
         &:checked:disabled ~ .checkbox_visual,
@@ -102,12 +97,3 @@
         top: -1px;
     }
 }
-
-@keyframes check-grow {
-    0% {
-      stroke-dasharray: 0.01px 30px;
-    }
-    100% {
-      stroke-dasharray: 11.4px 30px;
-    }
-  }

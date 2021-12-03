@@ -1,0 +1,21 @@
+.split_button {
+    display: inline-flex;
+    position: relative;
+
+    > button:not([class*=split]) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        min-width: 85px;
+        text-align: left;
+    }
+}
+
+.button {
+    min-width: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left-width: 0;
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
+    font-size: 12px;
+    line-height: 12px;
+}

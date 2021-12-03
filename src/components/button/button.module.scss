@@ -38,6 +38,27 @@
   }
 }
 
+.button_subtle {
+  border-color: transparent;
+  background-color: var(--SublteFillColorTransparent);
+  &:hover, &:active {
+    border-color: transparent;
+  }
+  &:hover {
+    background-color: var(--SubtleFillColorSecondary);
+  }
+  &:active {
+    background-color: var(--SubtleFillColorTertiary);
+  }
+}
+
+.button_iconOnly {
+  min-width: 0;
+  width: 32px;
+  font-family: var(--fontFamilyIcon);
+  padding: 0;
+}
+
 .button_disabled {
   &,
   &:hover,

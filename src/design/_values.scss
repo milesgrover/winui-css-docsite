@@ -6,6 +6,7 @@ $controlMinWidth: 120px;
 $fontWeightNormal: 400;
 $fontWeightSemibold: 600;
 $fontFamily: "Segoe UI", "Segoe", sans-serif;
+$fontFamilyIcon: "Segoe Fluent Icons", "Segoe MDL2 Assets";
 $fontCaption: var(--fontWeightNormal) 12px/16px var(--fontFamily);
 $fontBody: var(--fontWeightNormal) 14px/20px var(--fontFamily);
 $fontBodyStrong: var(--fontWeightSemibold) 14px/20px var(--fontFamily);
@@ -136,6 +137,9 @@ $lightValues: (
     SystemFillColorNeutralBackground: rgba(0, 0, 0, 0.0241),
     SystemFillColorSolidAttentionBackground: #F7F7F7,
     SystemFillColorSolidNeutralBackground: #F3F3F3,
+
+    AcrylicBackgroundFillColorBase: #F3F3F3,
+    AcrylicBackgroundFillColorDefault: #FCFCFC,
 );
 
 $darkValues: (
@@ -247,6 +251,9 @@ $darkValues: (
     SystemFillColorNeutralBackground: rgba(255, 255, 255, 0.0326),
     SystemFillColorSolidAttentionBackground: #2E2E2E,
     SystemFillColorSolidNeutralBackground: #2E2E2E,
+    
+    AcrylicBackgroundFillColorBase: #202020,
+    AcrylicBackgroundFillColorDefault: #2C2C2C,
 );
 
 $elevationLight: (

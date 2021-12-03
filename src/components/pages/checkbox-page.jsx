@@ -23,7 +23,7 @@ export const CheckboxPage = () => {
             </section>
             <section>
                 <h2>Indeterminate checkbox</h2>
-                <Checkbox indeterminate>Sample checkbox</Checkbox>
+                <Checkbox isThreeState indeterminate>Sample checkbox</Checkbox>
             </section>
             <section>
                 <h2>Disabled indeterminate checkbox</h2>

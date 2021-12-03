@@ -1,0 +1,65 @@
+.context_menu {
+    position: absolute;
+    width: 280px;
+    border-radius: var(--borderRadiusLarge);
+    overflow: hidden;
+    box-shadow: var(--elevation32);
+    z-index: 1000;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    list-style: none;
+    margin: 0;
+    padding: 2px 0;
+}
+
+.list_item {
+    border: 0;
+    margin: 0;
+    display: block;
+    padding: 2px 4px;
+    background: transparent;
+    position: relative;
+
+    button {
+        margin: 0;
+        border: 0;
+        background: transparent;
+        display: block;
+        width: 100%;
+        text-align: left;
+        height: 36px;
+        padding: 6px 11px 8px;
+        box-sizing: border-box;
+        font: var(--fontBody);
+        border-radius: var(--borderRadiusSmall);
+        color: inherit;
+
+        &:hover {
+            background-color: var(--SubtleFillColorSecondary);
+        }
+        &:active {
+            background-color: var(--SubtleFillColorTertiary);
+        }
+    }
+
+    .item_icon {
+        font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
+        font-size: 12px;
+        line-height: 12px;
+        display: block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 12px;
+        left: 16px;
+    }
+
+    &.has_icon {
+        button {
+            padding-left: 44px;
+        }
+    }
+}

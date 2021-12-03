@@ -1,0 +1,67 @@
+.info_bar {
+    display: table; // takes up a full line like display block, but shrinks width to fit content like inline
+    max-width: 100%;
+    min-height: 46px;
+    line-height: 0;
+    box-sizing: border-box;
+    background-color: var(--CardBackgroundFillColorSecondary);
+    border: 1px solid;
+    border-color: var(--CardStrokeColorDefault);
+    border-radius: var(--borderRadiusSmall);
+    margin-bottom: 12px;
+    
+    .grid {
+        display: grid;
+        grid-template-columns: 48px 1fr 48px;
+        justify-items: center;
+    }
+
+    .badge {
+        line-height: 0;
+        padding: 15px 0;
+    }
+
+    .content {
+        justify-self: stretch;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 12px 0 14px;
+        gap: 12px;
+
+        .title {
+            font: var(--fontBodyStrong);
+        }
+        .message {
+            font: var(--fontBody);
+        }
+        .action {
+            font: var(--fontBody);
+            margin: -4px 4px -8px;
+        }
+    }
+
+    .close {
+        padding: 7px 0;
+    }
+
+    &.multiline {
+        .content {
+            .action {
+                margin: 0;
+                &.hyperlink_action {
+                    margin-left: -12px;
+                }
+            }
+        }
+    }
+
+    &.sev_success {
+        background-color: var(--SystemFillColorSuccessBackground);
+    }
+    &.sev_caution {
+        background-color: var(--SystemFillColorCautionBackground);
+    }
+    &.sev_critical {
+        background-color: var(--SystemFillColorCriticalBackground);
+    }
+}

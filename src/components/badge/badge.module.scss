@@ -1,0 +1,49 @@
+.badge {
+    $size: 16px;
+    min-width: $size;
+    height: $size;
+    box-sizing: border-box;
+    font: var(--fontCaption);
+    color: var(--TextOnAccentFillColorPrimary);
+    border-radius: var(--borderRadiusCircle);
+    font-family: var(--fontFamily), var(--fontFamilyIcon);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    .value {
+        padding: 0 3px;
+        box-sizing: border-box;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .icon {
+        position: relative;
+        top: 1px;
+        padding: 0 1px;
+        box-sizing: border-box;
+        width: 100%;
+        text-align: center;
+    }
+
+    &.status_info {
+        background-color: var(--SystemFillColorNeutralBackground);
+        color: var(--TextFillColorPrimary);
+    }
+    &.status_info-safe {
+        background-color: var(--SystemFillColorSolidNeutral);
+    }
+    &.status_attention {
+        background-color: var(--AccentFillColorDefault);
+    }
+    &.status_success {
+        background-color: var(--SystemFillColorSuccess);
+    }
+    &.status_caution {
+        background-color: var(--SystemFillColorCaution);
+    }
+    &.status_critical {
+        background-color: var(--SystemFillColorCritical);
+    }
+}
